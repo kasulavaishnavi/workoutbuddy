@@ -13,7 +13,7 @@ const {user} = useAuthContext()
 
   // //GET request function
   const getWorkouts = async () => {
-    const response = await axios.get("http://localhost:4000/api/workout", {
+    const response = await axios.get("https://workoutbuddy-backend-cu6g.onrender.com/api/workout", {
       headers: {
         "Authorization" : `Bearer ${user.token}`
       }
@@ -43,7 +43,7 @@ const {user} = useAuthContext()
   const createWorkout = async (e) => {
     e.preventDefault();
     const response = await axios.post(
-      "http://localhost:4000/api/workout",
+      "https://workoutbuddy-backend-cu6g.onrender.com/api/workout",
       form,
       {
         headers: {
@@ -62,7 +62,7 @@ const {user} = useAuthContext()
 
   //DELETE REQUEST
   const deleteWorkout = async (_id) => {
-    await axios.delete(`http://localhost:4000/api/workout/${_id}`,{
+    await axios.delete(`https://workoutbuddy-backend-cu6g.onrender.com/api/workout/${_id}`,{
       headers: {
         "Authorization" : `Bearer ${user.token}`
       }
@@ -99,7 +99,7 @@ const {user} = useAuthContext()
   const updateWorkout = async (e) => {
     e.preventDefault();
     const { _id, title, reps, load } = updateForm;
-    await axios.patch(`http://localhost:4000/api/workout/${_id}`, {
+    await axios.patch(`https://workoutbuddy-backend-cu6g.onrender.com/api/workout/${_id}`, {
       title,
       reps,
       load,
